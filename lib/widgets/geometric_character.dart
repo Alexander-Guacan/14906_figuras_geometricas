@@ -8,20 +8,37 @@ class GeometricCharacter extends StatelessWidget {
 
   GeometricCharacter(
       {super.key, required Shapes character, double? width, double? height})
-      : _width = width ?? 80.0, _height = height ?? width {
+      : _width = width ?? 80.0,
+        _height = height ?? width {
     const String imgPath = "assets/img/characters/";
 
     switch (character) {
+      case Shapes.Circle1:
+        _shapePath = "${imgPath}circle1-character.png";
+        break;
+
       case Shapes.circle:
         _shapePath = "${imgPath}circle-character.png";
+        break;
+
+      case Shapes.triangle1:
+        _shapePath = "${imgPath}triangle1-character.png";
         break;
 
       case Shapes.triangle:
         _shapePath = "${imgPath}triangle-character.png";
         break;
 
+      case Shapes.square1:
+        _shapePath = "${imgPath}square1-character.png";
+        break;
+
       case Shapes.square:
         _shapePath = "${imgPath}square-character.png";
+        break;
+
+      case Shapes.rectangle1:
+        _shapePath = "${imgPath}rectangle1-character.png";
         break;
 
       case Shapes.rectangle:

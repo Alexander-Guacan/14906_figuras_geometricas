@@ -22,7 +22,10 @@ class _TutorialPageState extends State<TutorialPage> {
         children: [
           const Text(
             "Tutoriales",
-            style: TextStyle(fontSize: 40),
+            style: TextStyle(
+                fontSize: 58,
+                color: Color.fromARGB(255, 235, 11, 205),
+                fontFamily: "LuckiestGuy"),
           ),
           Column(
             children: [
@@ -31,41 +34,60 @@ class _TutorialPageState extends State<TutorialPage> {
                 children: [
                   Column(
                     children: [
-                      const Text("¿Cuadrado?"),
+                      const Text(
+                        "¿Cuadrado?",
+                        style: TextStyle(
+                          fontSize: 35,
+                          fontFamily: "MooLahLah",
+                          color: Color.fromARGB(255, 22, 58, 188),
+                        ),
+                      ),
                       GestureDetector(
                         onTap: () => setState(() {
                           _video = selectVideo(Shapes.square);
                         }),
                         child: GeometricCharacter(
                           character: Shapes.square,
-                          width: 132,
+                          width: 130,
                         ),
                       ),
                     ],
                   ),
                   Column(
                     children: [
-                      const Text("¿Circulo?"),
+                      const Text(
+                        "¿Circulo?",
+                        style: TextStyle(
+                          fontSize: 35,
+                          fontFamily: "MooLahLah",
+                          color: Color.fromARGB(255, 30, 81, 33),
+                        ),
+                      ),
                       GestureDetector(
                         onTap: () => setState(() {
                           _video = selectVideo(Shapes.circle);
                         }),
                         child: GeometricCharacter(
                           character: Shapes.circle,
-                          width: 132,
+                          width: 130,
                         ),
                       ),
                     ],
                   ),
                 ],
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
                     children: [
-                      const Text("¿Triángulo?"),
+                      const Text("¿Triángulo?",
+                          style: TextStyle(
+                            fontSize: 40,
+                            fontFamily: "MooLahLah",
+                            color: Color.fromARGB(255, 188, 22, 22),
+                          )),
                       GestureDetector(
                         onTap: () => setState(() {
                           _video = selectVideo(Shapes.triangle);
@@ -79,7 +101,12 @@ class _TutorialPageState extends State<TutorialPage> {
                   ),
                   Column(
                     children: [
-                      const Text("¿Rectángulo?"),
+                      const Text("¿Rectángulo?",
+                          style: TextStyle(
+                            fontSize: 31,
+                            fontFamily: "MooLahLah",
+                            color: Color.fromARGB(255, 220, 231, 12),
+                          )),
                       GestureDetector(
                         onTap: () => setState(() {
                           _video = selectVideo(Shapes.rectangle);
