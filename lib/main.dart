@@ -1,4 +1,7 @@
+import 'package:figuras_geometricas/pages/games_menu_page.dart';
 import 'package:figuras_geometricas/pages/home_page.dart';
+import 'package:figuras_geometricas/pages/results_page.dart';
+import 'package:figuras_geometricas/pages/test_page.dart';
 import 'package:figuras_geometricas/pages/tutorial_page.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +24,9 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/tutorials": (context) => const TutorialPage(),
+        "/games_menu": (context) => const GamesMenuPage(),
+        "/test": (context) => const TestPage(),
+        "/results": (context) => const ResultsPage(),
       },
       home: const HomePage(),
     );
