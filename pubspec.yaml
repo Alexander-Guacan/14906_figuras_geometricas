@@ -63,8 +63,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/img/characters/
+    - assets/img/games/circle/
+    - assets/img/games/rectangle/
+    - assets/img/games/square/
+    - assets/img/games/triangle/
+    - assets/img/background/
     - assets/video/tutorials/
-    - assets/img/fondo7.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
