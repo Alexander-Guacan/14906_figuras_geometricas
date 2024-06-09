@@ -1,6 +1,7 @@
 import 'package:figuras_geometricas/enums/shapes.dart';
-import 'package:figuras_geometricas/widgets/geometric_character.dart';
+import 'package:figuras_geometricas/models/geometric_character.dart';
 import 'package:figuras_geometricas/widgets/custom_video_player.dart';
+import 'package:figuras_geometricas/widgets/image_button.dart';
 import 'package:flutter/material.dart';
 
 class TutorialPage extends StatefulWidget {
@@ -22,57 +23,43 @@ class _TutorialPageState extends State<TutorialPage> {
         children: [
           const Text(
             "Tutoriales",
+            textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 58,
-                color: Color.fromARGB(255, 235, 11, 205),
-                fontFamily: "LuckiestGuy"),
+              fontSize: 60,
+              fontFamily: "Anton",
+              color: Color.fromARGB(255, 190, 26, 215),
+            ),
           ),
           Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Column(
-                    children: [
-                      const Text(
-                        "¿Cuadrado?",
-                        style: TextStyle(
-                          fontSize: 35,
-                          fontFamily: "MooLahLah",
-                          color: Color.fromARGB(255, 22, 58, 188),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => setState(() {
-                          _video = selectVideo(Shapes.square);
-                        }),
-                        child: GeometricCharacter(
-                          character: Shapes.square,
-                          width: 130,
-                        ),
-                      ),
-                    ],
+                  ImageButton(
+                    text: "¿Cuadrado",
+                    onTap: () => setState(() {
+                      _video = selectVideo(Shapes.square);
+                    }),
+                    imagePath: GeometricCharacter.imagePath(Shapes.square),
+                    width: 128,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontFamily: "MooLahLah",
+                      color: Color.fromRGBO(73, 200, 245, 1),
+                    ),
                   ),
-                  Column(
-                    children: [
-                      const Text(
-                        "¿Circulo?",
-                        style: TextStyle(
-                          fontSize: 35,
-                          fontFamily: "MooLahLah",
-                          color: Color.fromARGB(255, 30, 81, 33),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => setState(() {
-                          _video = selectVideo(Shapes.circle);
-                        }),
-                        child: GeometricCharacter(
-                          character: Shapes.circle,
-                          width: 130,
-                        ),
-                      ),
-                    ],
+                  ImageButton(
+                    text: "¿Circulo?",
+                    onTap: () => setState(() {
+                      _video = selectVideo(Shapes.circle);
+                    }),
+                    imagePath: GeometricCharacter.imagePath(Shapes.circle),
+                    width: 128,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontFamily: "MooLahLah",
+                      color: Color.fromRGBO(25, 178, 114, 1),
+                    ),
                   ),
                 ],
               ),
@@ -80,43 +67,31 @@ class _TutorialPageState extends State<TutorialPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Column(
-                    children: [
-                      const Text("¿Triángulo?",
-                          style: TextStyle(
-                            fontSize: 40,
-                            fontFamily: "MooLahLah",
-                            color: Color.fromARGB(255, 188, 22, 22),
-                          )),
-                      GestureDetector(
-                        onTap: () => setState(() {
-                          _video = selectVideo(Shapes.triangle);
-                        }),
-                        child: GeometricCharacter(
-                          character: Shapes.triangle,
-                          width: 132,
-                        ),
-                      ),
-                    ],
+                  ImageButton(
+                    text: "¿Triángulo?",
+                    onTap: () => setState(() {
+                      _video = selectVideo(Shapes.triangle);
+                    }),
+                    imagePath: GeometricCharacter.imagePath(Shapes.triangle),
+                    width: 128,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontFamily: "MooLahLah",
+                      color: Color.fromRGBO(240, 62, 36, 1),
+                    ),
                   ),
-                  Column(
-                    children: [
-                      const Text("¿Rectángulo?",
-                          style: TextStyle(
-                            fontSize: 31,
-                            fontFamily: "MooLahLah",
-                            color: Color.fromARGB(255, 220, 231, 12),
-                          )),
-                      GestureDetector(
-                        onTap: () => setState(() {
-                          _video = selectVideo(Shapes.rectangle);
-                        }),
-                        child: GeometricCharacter(
-                          character: Shapes.rectangle,
-                          width: 132,
-                        ),
-                      ),
-                    ],
+                  ImageButton(
+                    text: "¿Rectángulo?",
+                    onTap: () => setState(() {
+                      _video = selectVideo(Shapes.rectangle);
+                    }),
+                    imagePath: GeometricCharacter.imagePath(Shapes.rectangle),
+                    width: 128,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontFamily: "MooLahLah",
+                      color: Color.fromRGBO(251, 221, 3, 1),
+                    ),
                   ),
                 ],
               ),
