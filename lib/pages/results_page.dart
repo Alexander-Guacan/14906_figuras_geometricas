@@ -20,8 +20,12 @@ class ResultsPage extends StatelessWidget {
             result.hasWon
                 ? "Bien hecho, sigue asi"
                 : "Que mal, sigue intentando",
+            style: const TextStyle(
+              fontSize: 38,
+              fontFamily: "Anton",
+              color: Color.fromARGB(255, 190, 26, 215),
+            ),
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 40),
           ),
           Center(
             child: Image.asset(
