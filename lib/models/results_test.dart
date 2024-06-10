@@ -3,8 +3,30 @@ import 'package:figuras_geometricas/models/geometric_character.dart';
 
 class ResultsTest {
   final bool hasWon;
-  static final String winnerImagePath = GeometricCharacter.imagePath(Shapes.circleHappy);
-  static final String loserImagePath = GeometricCharacter.imagePath(Shapes.triangle);
+  final Shapes shape;
 
-  ResultsTest({required this.hasWon});
+  ResultsTest({required this.hasWon, required this.shape});
+
+  String get imagePath {
+    switch (shape) {
+      case Shapes.circle:
+        return hasWon
+            ? GeometricCharacter.imagePath(Shapes.circleHappy)
+            : GeometricCharacter.imagePath(Shapes.loseCircle);
+      case Shapes.triangle:
+        return hasWon
+            ? GeometricCharacter.imagePath(Shapes.triangleHappy)
+            : GeometricCharacter.imagePath(Shapes.loseTriangle);
+      case Shapes.square:
+        return hasWon
+            ? GeometricCharacter.imagePath(Shapes.squareHappy)
+            : GeometricCharacter.imagePath(Shapes.loseSquare);
+      case Shapes.rectangle:
+        return hasWon
+            ? GeometricCharacter.imagePath(Shapes.winRectangle)
+            : GeometricCharacter.imagePath(Shapes.rectangleHappy);
+      default:
+        return "";
+    }
+  }
 }

@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
             const Text(
               "FIGURAS GEOMÉTRICAS",
               style: TextStyle(
-                fontSize: 60,
+                fontSize: 65,
                 fontFamily: "Anton",
                 color: Color.fromARGB(255, 190, 26, 215),
               ),
@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
                   height: 30,
                 ),
                 SimpleButton(
-                  text: "Tutorial",
+                  text: "Aprender",
                   onPressed: () => Navigator.pushNamed(context, "/tutorials"),
                 ),
               ],
@@ -50,23 +50,23 @@ class HomePage extends StatelessWidget {
               children: [
                 Image.asset(
                   GeometricCharacter.imagePath(Shapes.circleHappy),
-                  width: 80,
-                  height: 80,
+                  width: 90,
+                  height: 90,
                 ),
                 Image.asset(
                   GeometricCharacter.imagePath(Shapes.squareHappy),
-                  width: 80,
-                  height: 80,
+                  width: 90,
+                  height: 90,
                 ),
                 Image.asset(
                   GeometricCharacter.imagePath(Shapes.triangleHappy),
-                  width: 80,
-                  height: 80,
+                  width: 90,
+                  height: 90,
                 ),
                 Image.asset(
                   GeometricCharacter.imagePath(Shapes.rectangleHappy),
-                  width: 80,
-                  height: 80,
+                  width: 90,
+                  height: 90,
                 ),
               ],
             )

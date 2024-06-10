@@ -6,5 +6,9 @@ enum Shapes {
   circleHappy,
   triangleHappy,
   squareHappy,
-  rectangleHappy
+  rectangleHappy,
+  loseCircle,
+  loseTriangle,
+  loseSquare,
+  winRectangle
 }

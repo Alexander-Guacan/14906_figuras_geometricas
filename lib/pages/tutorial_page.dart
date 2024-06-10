@@ -18,92 +18,105 @@ class _TutorialPageState extends State<TutorialPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            "Tutoriales",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 60,
-              fontFamily: "Anton",
-              color: Color.fromARGB(255, 190, 26, 215),
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/img/background/fondo3.jpg'),
+            fit: BoxFit.cover,
           ),
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ImageButton(
-                    text: "¿Cuadrado",
-                    onTap: () => setState(() {
-                      _video = selectVideo(Shapes.square);
-                    }),
-                    imagePath: GeometricCharacter.imagePath(Shapes.square),
-                    width: 128,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontFamily: "MooLahLah",
-                      color: Color.fromRGBO(73, 200, 245, 1),
-                    ),
-                  ),
-                  ImageButton(
-                    text: "¿Circulo?",
-                    onTap: () => setState(() {
-                      _video = selectVideo(Shapes.circle);
-                    }),
-                    imagePath: GeometricCharacter.imagePath(Shapes.circle),
-                    width: 128,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontFamily: "MooLahLah",
-                      color: Color.fromRGBO(25, 178, 114, 1),
-                    ),
-                  ),
-                ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const SizedBox(height: 10), // Add this line (1/2)
+            const Text(
+              "Tutoriales",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 70,
+                fontFamily: "LuckiestGuy",
+                color: Color.fromARGB(255, 16, 79, 228),
               ),
-              const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ImageButton(
-                    text: "¿Triángulo?",
-                    onTap: () => setState(() {
-                      _video = selectVideo(Shapes.triangle);
-                    }),
-                    imagePath: GeometricCharacter.imagePath(Shapes.triangle),
-                    width: 128,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontFamily: "MooLahLah",
-                      color: Color.fromRGBO(240, 62, 36, 1),
-                    ),
-                  ),
-                  ImageButton(
-                    text: "¿Rectángulo?",
-                    onTap: () => setState(() {
-                      _video = selectVideo(Shapes.rectangle);
-                    }),
-                    imagePath: GeometricCharacter.imagePath(Shapes.rectangle),
-                    width: 128,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontFamily: "MooLahLah",
-                      color: Color.fromRGBO(251, 221, 3, 1),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Visibility(
-            visible: _video.isNotEmpty,
-            child: CustomVideoPlayer(
-              video: _video,
             ),
-          ),
-        ],
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ImageButton(
+                      text: "¿Cuadrado",
+                      onTap: () => setState(() {
+                        _video = selectVideo(Shapes.square);
+                      }),
+                      imagePath: GeometricCharacter.imagePath(Shapes.square),
+                      width: 128,
+                      
+                      style: const TextStyle(
+                        fontSize: 33,
+                        fontFamily: "MooLahLah",
+                        color: Color.fromRGBO(42, 189, 243, 1),
+                      ),
+                    ),
+                    ImageButton(
+                      text: "¿Circulo?",
+                      onTap: () => setState(() {
+                        _video = selectVideo(Shapes.circle);
+                      }),
+                      imagePath: GeometricCharacter.imagePath(Shapes.circle),
+                      width: 128,
+                      
+                      style: const TextStyle(
+                        fontSize: 33,
+                        fontFamily: "MooLahLah",
+                        color: Color.fromRGBO(25, 178, 114, 1),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    ImageButton(
+                      text: "¿Triángulo?",
+                      onTap: () => setState(() {
+                        _video = selectVideo(Shapes.triangle);
+                      }),
+                      imagePath: GeometricCharacter.imagePath(Shapes.triangle),
+                      width: 128,
+                     
+                      style: const TextStyle(
+                        fontSize: 33,
+                        fontFamily: "MooLahLah",
+                        color: Color.fromRGBO(240, 62, 36, 1),
+                      ),
+                    ),
+                    ImageButton(
+                      text: "¿Rectángulo?",
+                      onTap: () => setState(() {
+                        _video = selectVideo(Shapes.rectangle);
+                      }),
+                      imagePath: GeometricCharacter.imagePath(Shapes.rectangle),
+                      width: 128,
+                     
+                      style: const TextStyle(
+                        fontSize: 33,
+                        fontFamily: "MooLahLah",
+                        color: Color.fromRGBO(251, 221, 3, 1),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Visibility(
+              visible: _video.isNotEmpty,
+              child: CustomVideoPlayer(
+                video: _video,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:figuras_geometricas/enums/shapes.dart';
 import 'package:figuras_geometricas/models/game_test.dart';
 import 'package:figuras_geometricas/models/results_test.dart';
 import 'package:figuras_geometricas/widgets/image_button.dart';
@@ -13,41 +14,53 @@ class TestPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          Text(
-            gameSettings.question,
-            style: const TextStyle(
-              fontSize: 38,
-              fontFamily: "Anton",
-              color: Color.fromARGB(255, 190, 26, 215),
-            ),
-            textAlign: TextAlign.center,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/img/background/fondo5.jpg'),
+            fit: BoxFit.cover,
           ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: createOptions(
-                context,
-                gameSettings.images,
-                gameSettings.correctOption.index,
-              ),
+        ),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 40,
             ),
-          )
-        ],
+            Text(
+              gameSettings.question,
+              style: const TextStyle(
+                fontSize: 50,
+                fontFamily: "Lobster",
+                color: Color.fromARGB(255, 58, 5, 87),
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: createOptions(
+                  context,
+                  gameSettings.images,
+                  gameSettings.correctOption.index,
+                  gameSettings.shape,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
 
-  List<Widget> createOptions(
-      BuildContext context, List<String> images, int correctOption) {
+  List<Widget> createOptions(BuildContext context, List<String> images,
+      int correctOption, Shapes shape) {
     List<Widget> options = List.empty(growable: true);
 
     showResultsPage(bool hasWon) {
       Navigator.pushNamed(
         context,
         "/results",
-        arguments: ResultsTest(hasWon: hasWon),
+        arguments: ResultsTest(hasWon: hasWon, shape: shape),
       );
     }
 
@@ -57,17 +70,21 @@ class TestPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ImageButton(
-                text: "",
-                onTap: () => showResultsPage(correctOption == i),
-                imagePath: images[i],
-                width: 132,
-                height: 132),
+              text: "",
+              onTap: () => showResultsPage(correctOption == i),
+              imagePath: images[i],
+              width: 132,
+              height: 132,
+              
+            ),
             ImageButton(
-                text: "",
-                onTap: () => showResultsPage(correctOption == i + 1),
-                imagePath: images[i + 1],
-                width: 132,
-                height: 132),
+              text: "",
+              onTap: () => showResultsPage(correctOption == i + 1),
+              imagePath: images[i + 1],
+              width: 132,
+              height: 132,
+             
+            ),
           ],
         ),
       );

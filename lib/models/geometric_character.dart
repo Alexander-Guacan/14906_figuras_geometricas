@@ -29,6 +29,17 @@ class GeometricCharacter {
       case Shapes.rectangleHappy:
         return "${imgPath}rectangle-happy.png";
 
+      case Shapes.loseCircle:
+        return "${imgPath}lose_circle.png";
+
+      case Shapes.loseTriangle:
+        return "${imgPath}lose_triangle.png";
+      
+      case Shapes.loseSquare:
+        return "${imgPath}lose_square.png";
+
+      case Shapes.winRectangle:
+        return "${imgPath}win_rectangle.png";
       default:
         return "";
     }
